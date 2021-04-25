@@ -13,7 +13,7 @@ publishDir = "docs"
 
 # website title
 # 网站标题
-title = "LoveIt"
+title = "kepreal's Blog"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -68,21 +68,21 @@ enableEmoji = true
         url = "/categories/"
         title = ""
         weight = 3
-      [[languages.zh-cn.menu.main]]
-        identifier = "documentation"
-        pre = ""
-        name = "文档"
-        url = "/categories/documentation/"
-        title = ""
-        weight = 4
-      [[languages.zh-cn.menu.main]]
-        identifier = "about"
-        pre = ""
-        post = ""
-        name = "关于"
-        url = "/about/"
-        title = ""
-        weight = 5
+      #[[languages.zh-cn.menu.main]]
+      #  identifier = "documentation"
+      #  pre = ""
+      #  name = "文档"
+      #  url = "/categories/documentation/"
+      #  title = ""
+      #  weight = 4
+      #[[languages.zh-cn.menu.main]]
+      #  identifier = "about"
+      #  pre = ""
+      #  post = ""
+      #  name = "关于"
+      #  url = "/about/"
+      #  title = ""
+      #  weight = 5
       [[languages.zh-cn.menu.main]]
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw'></i>"
@@ -112,7 +112,7 @@ enableEmoji = true
         tileColor = "#da532c"
       # 搜索配置
       [languages.zh-cn.params.search]
-        enable = true
+        enable = false
         # 搜索引擎的类型 ("lunr", "algolia")
         type = "algolia"
         # 文章内容最长索引长度
@@ -451,7 +451,7 @@ enableEmoji = true
     # Comment config
     # 评论系统设置
     [params.page.comment]
-      enable = true
+      enable = false
       # Disqus comment config (https://disqus.com/)
       # Disqus 评论系统设置 (https://disqus.com/)
       [params.page.comment.disqus]

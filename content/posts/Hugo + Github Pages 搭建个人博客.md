@@ -1,8 +1,13 @@
 ---
 title: "Hugo + Github Pages 搭建个人博客"
 date: 2021-04-25T09:43:24+08:00
+featuredImage: "/images/hugo.png"
 draft: false
 ---
+
+LoveIt 主题，简洁优雅高效，聚焦博客编写
+
+<!--more-->
 
 ## 安装hugo
 https://github.com/gohugoio/hugo/releases
@@ -34,5 +39,10 @@ http://localhost:1313查看效果
 - 设置发布目录为docs(publishDir = "docs")
 - hugo命令生成网页
 - push 到 github
-- 设置github pages，目录选择docs
+- 设置github pages，目录选择docs，绑定域名blog.kepreal.com
+
+## Reference
+- https://hugoloveit.com/zh-cn/
+- https://hugoloveit.com/zh-cn/theme-documentation-basics/
+- https://zhuanlan.zhihu.com/p/37752930
 

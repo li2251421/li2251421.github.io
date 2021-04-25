@@ -1,6 +1,6 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>LoveIt</title>
+        <title>kepreal&#39;s Blog</title>
         <link>http://blog.kepreal.com/</link>
         <description>本站主要用来个人笔记、资料整理、技术分享等</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>li2251421@163.com (kepreal)</managingEditor>
@@ -12,6 +12,8 @@
     <pubDate>Sun, 25 Apr 2021 09:43:24 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://blog.kepreal.com/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[安装hugo https://github.com/gohugoio/hugo/releases 1 2 hugo version hugo v0.82.1-60618210+extended windows/amd64 BuildDate=2021-04-20T11:02:50Z VendorInfo=gohugoio 创建站点并选择主题 本人选择的是LoveIt主题 1 2 3 4 5 6 cd E:\project hugo new site blog cd blog git init git submodule add https://github.com/dillonzq/LoveIt.git cp themes/LoveIt/exampleSite/config.toml config.toml 修改配置本地启动]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hugo.png" referrerpolicy="no-referrer">
+            </div><p>LoveIt 主题，简洁优雅高效，聚焦博客编写</p>]]></description>
 </item></channel>
 </rss>
