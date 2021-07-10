@@ -2,8 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://blog.kepreal.com/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/posts/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://blog.kepreal.com/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://blog.kepreal.com/categories/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/posts/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/categories/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/%E7%94%B5%E5%BD%B1%E8%A7%82%E5%90%8E%E6%84%9F-%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/github-pages/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/hugo/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://blog.kepreal.com/categories/hugo/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://blog.kepreal.com/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
