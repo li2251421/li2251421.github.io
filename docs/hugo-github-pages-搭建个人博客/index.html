@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/blog.kepreal.com\/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/"
-        },"image": ["http:\/\/blog.kepreal.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, Github Pages","wordcount":  316 ,
+        },"image": ["http:\/\/blog.kepreal.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "hugo, Github Pages","wordcount":  361 ,
         "url": "http:\/\/blog.kepreal.com\/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2021-04-25T09:43:24+08:00","dateModified": "2021-04-25T09:43:24+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "kepreal","logo": "http:\/\/blog.kepreal.com\/images\/avatar.png"},"author": {
@@ -79,7 +79,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo &#43; Github Pages 搭建个人博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://github.com/li2251421" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>kepreal</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/hugo/"><i class="far fa-folder fa-fw"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-25">2021-04-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 316 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-25">2021-04-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 361 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -133,7 +133,7 @@ hugo new site blog
 <span class="nb">cd</span> blog
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git
-cp themes/LoveIt/exampleSite/config.toml config.toml
+cp themes/LoveIt/exampleSite/config.toml config.toml<span class="o">(</span>可省略，启动和发布时指定theme<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="添加帖子">添加帖子</h2>
@@ -190,7 +190,7 @@ LoveIt 主题，简洁优雅高效，聚焦博客编写
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">vim config.tomal
-hugo serve -e production --watch --port<span class="o">=</span><span class="m">1313</span> --bind<span class="o">=</span>0.0.0.0 --theme<span class="o">=</span>
+hugo serve -e production --watch --port<span class="o">=</span><span class="m">1313</span> --bind<span class="o">=</span>0.0.0.0 --theme<span class="o">=</span>LoveIt
 </code></pre></td></tr></table>
 </div>
 </div><p>http://localhost:1313查看效果</p>
@@ -198,7 +198,7 @@ hugo serve -e production --watch --port<span class="o">=</span><span class="m">1
 <ul>
 <li>新建仓库 <a href="https://github.com/li2251421/li2251421.github.io">https://github.com/li2251421/li2251421.github.io</a></li>
 <li>设置发布目录为docs(publishDir = &ldquo;docs&rdquo;)</li>
-<li>hugo命令生成网页</li>
+<li>hugo &ndash;theme=LoveIt命令生成网页</li>
 <li>push 到 github</li>
 <li>设置github pages，目录选择docs，绑定域名blog.kepreal.com</li>
 </ul>

@@ -20,7 +20,7 @@ hugo new site blog
 cd blog
 git init
 git submodule add https://github.com/dillonzq/LoveIt.git
-cp themes/LoveIt/exampleSite/config.toml config.toml
+cp themes/LoveIt/exampleSite/config.toml config.toml(可省略，启动和发布时指定theme)
 ```
 
 ## 添加帖子
@@ -48,14 +48,14 @@ LoveIt 主题，简洁优雅高效，聚焦博客编写
 ## 修改配置本地启动
 ```shell script
 vim config.tomal
-hugo serve -e production --watch --port=1313 --bind=0.0.0.0 --theme=
+hugo serve -e production --watch --port=1313 --bind=0.0.0.0 --theme=LoveIt
 ```
 http://localhost:1313查看效果
 
 ## 发布到github
 - 新建仓库 https://github.com/li2251421/li2251421.github.io
 - 设置发布目录为docs(publishDir = "docs")
-- hugo命令生成网页
+- hugo --theme=LoveIt命令生成网页
 - push 到 github
 - 设置github pages，目录选择docs，绑定域名blog.kepreal.com
 
