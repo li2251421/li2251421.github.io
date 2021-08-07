@@ -2,17 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/</loc><lastmod>2021-08-07T23:55:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/</loc><lastmod>2021-08-07T23:55:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://blog.kepreal.com/posts/</loc><lastmod>2021-08-07T23:55:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://blog.kepreal.com/categories/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://blog.kepreal.com/tags/git/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://blog.kepreal.com/categories/git/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://blog.kepreal.com/git%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/posts/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://blog.kepreal.com/tags/</loc><lastmod>2021-08-07T22:59:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://blog.kepreal.com/tags/%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://blog.kepreal.com/tags/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://blog.kepreal.com/categories/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://blog.kepreal.com/%E7%94%B5%E5%BD%B1%E8%A7%82%E5%90%8E%E6%84%9F-%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://blog.kepreal.com/tags/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://blog.kepreal.com/categories/%E7%94%B5%E5%BD%B1/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://blog.kepreal.com/%E7%94%B5%E5%BD%B1%E8%A7%82%E5%90%8E%E6%84%9F-%E7%86%94%E7%82%89/</loc><lastmod>2021-07-10T23:55:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>http://blog.kepreal.com/tags/github-pages/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://blog.kepreal.com/tags/hugo/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://blog.kepreal.com/categories/hugo/</loc><lastmod>2021-04-25T09:43:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
