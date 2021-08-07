@@ -1,0 +1,14 @@
+# idea ignore
+.run/
+.idea/
+
+.vscode/
+
+*.swp
+
+# temp ignore
+
+# system ignores
+.DS_Store
+
+# project
