@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Go - 标签 - kepreal&#39;s Blog</title>
-        <link>http://blog.kepreal.com/tags/go/</link>
-        <description>Go - 标签 - kepreal&#39;s Blog</description>
+        <title>wire - 标签 - kepreal&#39;s Blog</title>
+        <link>http://blog.kepreal.com/tags/wire/</link>
+        <description>wire - 标签 - kepreal&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>li2251421@163.com (kepreal)</managingEditor>
-            <webMaster>li2251421@163.com (kepreal)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Aug 2021 23:55:20 &#43;0800</lastBuildDate><atom:link href="http://blog.kepreal.com/tags/go/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>li2251421@163.com (kepreal)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Aug 2021 23:55:20 &#43;0800</lastBuildDate><atom:link href="http://blog.kepreal.com/tags/wire/" rel="self" type="application/rss+xml" /><item>
     <title>Go库之wire</title>
     <link>http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/</link>
     <pubDate>Sat, 07 Aug 2021 23:55:20 &#43;0800</pubDate>

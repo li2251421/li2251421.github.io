@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Go库之wire - kepreal&#39;s Blog</title><meta name="Description" content="本站主要用来个人笔记、资料整理、技术分享等"><meta property="og:title" content="Go库之wire" />
-<meta property="og:description" content="Google开源的依赖注入工具(代码生成器)" />
+<meta property="og:description" content="Google开源的依赖注入代码生成器" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" /><meta property="og:image" content="http://blog.kepreal.com/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-07T23:55:20+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="http://blog.kepreal.com/logo.png"/>
 
 <meta name="twitter:title" content="Go库之wire"/>
-<meta name="twitter:description" content="Google开源的依赖注入工具(代码生成器)"/>
+<meta name="twitter:description" content="Google开源的依赖注入代码生成器"/>
 <meta name="application-name" content="kepreal&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="kepreal&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/blog.kepreal.com\/go%E5%BA%93%E4%B9%8Bwire\/"
-        },"image": ["http:\/\/blog.kepreal.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  22 ,
+        },"image": ["http:\/\/blog.kepreal.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Go, wire","wordcount":  948 ,
         "url": "http:\/\/blog.kepreal.com\/go%E5%BA%93%E4%B9%8Bwire\/","datePublished": "2021-08-07T23:55:20+08:00","dateModified": "2021-08-07T23:55:20+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "kepreal","logo": "http:\/\/blog.kepreal.com\/images\/avatar.png"},"author": {
@@ -78,16 +78,181 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Go库之wire</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/li2251421" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>kepreal</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-07">2021-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 22 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/li2251421" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>kepreal</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>Go</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-07">2021-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 948 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/wire.png"
+        data-srcset="/images/wire.png, /images/wire.png 1.5x, /images/wire.png 2x"
+        data-sizes="auto"
+        alt="/images/wire.png"
+        title="/images/wire.png" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>Google开源的依赖注入工具(代码生成器)</p></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#wire-介绍">wire 介绍</a></li>
+    <li><a href="#wire-特点">wire 特点</a></li>
+    <li><a href="#wire使用">wire使用</a>
+      <ul>
+        <li><a href="#安装wire工具">安装wire工具</a></li>
+        <li><a href="#定义提供者providers">定义提供者Providers</a></li>
+        <li><a href="#定义注入器injector">定义注入器Injector</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级功能">高级功能</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Google开源的依赖注入代码生成器</p>
+<h2 id="wire-介绍">wire 介绍</h2>
+<p>Wire 是一个代码生成工具，它使用依赖注入自动连接组件。组件之间的依赖关系在 Wire 中表示为函数参数，鼓励显式初始化而不是全局变量。由于 Wire 在没有运行时状态或反射的情况下运行，因此编写用于 Wire 的代码即使对于手写初始化也很有用。</p>
+<p>依赖注入(DI)经常和控制反转(IOC)放在一起讲，它是面向对象中的一种设计原则，可以用来减低代码间的耦合度。比如一个A类的构造方法中，依赖于一个B类，我们在初始化A之前需要先初始化B，然后才能初始化A。这个控制权在我们应用程序，而IOC需要有一个IOC容器，在我们初始化A时自动解析A的构造函数(反射)，将所依赖的对象B优先初始化，然后注入到A中，此处就是将控制权交与IOC容器进行管理。具体可参考Spring和Laravel等框架。</p>
+<h2 id="wire-特点">wire 特点</h2>
+<p>上面介绍中也提到了wire是在没有运行时状态或反射下运行的，它不像其他的工具提供了运行时依赖注入（Uber的dig，Facebook的inject）,它是一种代码生成器，是在编译期间完成依赖注入生成Go源码。</p>
+<h2 id="wire使用">wire使用</h2>
+<p><a href="https://github.com/li2251421/solution/tree/master/go/library/wire">https://github.com/li2251421/solution/tree/master/go/library/wire</a></p>
+<h3 id="安装wire工具">安装wire工具</h3>
+<p>go get github.com/google/wire/cmd/wire
+确保wire命令被添加到$GOPATH/bin目录下</p>
+<h3 id="定义提供者providers">定义提供者Providers</h3>
+<ul>
+<li>provider是可以产生值的函数</li>
+<li>函数必须导出才能被其他包使用(首字母大写)</li>
+<li>使用参数指定依赖关系</li>
+<li>可以返回错误、回调等多个值</li>
+<li>多个提供者经常一起使用，可以通过wire.NewSet分组</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">New</span><span class="p">(</span><span class="nx">dao</span> <span class="o">*</span><span class="nx">dao</span><span class="p">.</span><span class="nx">Dao</span><span class="p">)</span> <span class="o">*</span><span class="nx">Service</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">Service</span><span class="p">{</span>
+		<span class="nx">dao</span><span class="p">:</span> <span class="nx">dao</span><span class="p">,</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">New</span><span class="p">(</span><span class="nx">db</span> <span class="o">*</span><span class="nx">DB</span><span class="p">,</span> <span class="nx">redis</span> <span class="o">*</span><span class="nx">Redis</span><span class="p">)</span> <span class="o">*</span><span class="nx">Dao</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">Dao</span><span class="p">{</span>
+        <span class="nx">db</span><span class="p">:</span>    <span class="nx">db</span><span class="p">,</span>
+        <span class="nx">redis</span><span class="p">:</span> <span class="nx">redis</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">NewDB</span><span class="p">()</span> <span class="o">*</span><span class="nx">DB</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">DB</span><span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">NewRedis</span><span class="p">()</span> <span class="o">*</span><span class="nx">Redis</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">Redis</span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="定义注入器injector">定义注入器Injector</h3>
+<ul>
+<li>文件第一行需要加入 // +build wireinject build tag，报这个生成注入器后不会报重复定义的编译错误(生成文件中build tag: //+build !wireinject)</li>
+<li>通过wire.Build，传入provider set</li>
+<li>函数内部会根据依赖顺序调用相关Provider</li>
+<li>函数中没有真正的返回值，避免编译器报错，简单的用panic包裹即可</li>
+<li>通过wire命令生成注入器wire_gen.go</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">wire</span><span class="p">.</span><span class="k">go</span>
+<span class="c1">// +build wireinject
+</span><span class="c1">//go:generate wire
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">InitWireApp</span><span class="p">()</span> <span class="p">(</span><span class="o">*</span><span class="nx">service</span><span class="p">.</span><span class="nx">Service</span><span class="p">,</span> <span class="kd">func</span><span class="p">(),</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nb">panic</span><span class="p">(</span><span class="nx">wire</span><span class="p">.</span><span class="nf">Build</span><span class="p">(</span><span class="nx">DBSet</span><span class="p">,</span> <span class="nx">dao</span><span class="p">.</span><span class="nx">New</span><span class="p">,</span> <span class="nx">service</span><span class="p">.</span><span class="nx">New</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">DBSet</span> <span class="p">=</span> <span class="nx">wire</span><span class="p">.</span><span class="nf">NewSet</span><span class="p">(</span><span class="nx">dao</span><span class="p">.</span><span class="nx">NewDB</span><span class="p">,</span> <span class="nx">dao</span><span class="p">.</span><span class="nx">NewRedis</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">wire_gen</span><span class="p">.</span><span class="k">go</span>
+<span class="c1">// Code generated by Wire. DO NOT EDIT.
+</span><span class="c1"></span>
+<span class="c1">//go:generate go run github.com/google/wire/cmd/wire
+</span><span class="c1">//+build !wireinject
+</span><span class="c1"></span>
+<span class="c1">//go:generate wire
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">InitWireApp</span><span class="p">()</span> <span class="p">(</span><span class="o">*</span><span class="nx">service</span><span class="p">.</span><span class="nx">Service</span><span class="p">,</span> <span class="kd">func</span><span class="p">(),</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">db</span> <span class="o">:=</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">NewDB</span><span class="p">()</span>
+    <span class="nx">redis</span> <span class="o">:=</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">NewRedis</span><span class="p">()</span>
+    <span class="nx">daoDao</span> <span class="o">:=</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">redis</span><span class="p">)</span>
+    <span class="nx">serviceService</span> <span class="o">:=</span> <span class="nx">service</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">daoDao</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">serviceService</span><span class="p">,</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">},</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="高级功能">高级功能</h2>
+<ul>
+<li>接口注入</li>
+<li>属性自动注入</li>
+<li>值绑定</li>
+<li>把对象属性用作 Provider</li>
+<li>清理函数</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/google/wire">https://github.com/google/wire</a></li>
+<li><a href="https://studygolang.com/articles/27163">https://studygolang.com/articles/27163</a></li>
+<li><a href="https://blog.golang.org/wire">https://blog.golang.org/wire</a></li>
+</ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -98,13 +263,13 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire" data-hashtags="Go,wire"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-hashtag="Go"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire" data-image="/images/wire.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://blog.kepreal.com/go%E5%BA%93%E4%B9%8Bwire/" data-title="Go库之wire"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/baidu.svg"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">Go</a>,&nbsp;<a href="/tags/wire/">wire</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
